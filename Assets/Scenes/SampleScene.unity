@@ -747,7 +747,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 279749803}
-  groundTilemap: {fileID: 1428752579}
+  backgroundTilemap: {fileID: 1428752579}
+  middlegroundTilemap: {fileID: 1215586709}
   grassTiles:
   - {fileID: 11400000, guid: 3ce444d205e079945859a72b808a284e, type: 2}
   - {fileID: 11400000, guid: 64118ae3ef1f95a47b24882e97264cac, type: 2}
@@ -755,18 +756,28 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a6ff886e2ed2a85499e5abf7f018d0e8, type: 2}
   - {fileID: 11400000, guid: c9d36a6d7da321640b06c1e8abbb6da3, type: 2}
   - {fileID: 11400000, guid: d00f0852472ec08438cff4bbcd4a40bd, type: 2}
-  generateWater: 0
+  generateWater: 1
   waterTiles:
   - {fileID: 11400000, guid: 1bc3f6cc5e1961b458088df2bf781123, type: 2}
   - {fileID: 11400000, guid: c28f2bb690686ac49a5fb23bc258bbc8, type: 2}
   - {fileID: 11400000, guid: 075cf1aab560c214ebd17645fb5aff52, type: 2}
   - {fileID: 11400000, guid: 6f1b6ab62acc7dd40ae6b6fd79fcfbcc, type: 2}
+  generateProps: 1
+  propTiles:
+  - {fileID: 11400000, guid: 1ce17ea2d1c27dc48b6bc41a82d6f4a9, type: 2}
+  - {fileID: 11400000, guid: 84cbb66e74f320b4f898a47163fe0da7, type: 2}
+  - {fileID: 11400000, guid: b10766bcc3ce8d54fa0ed78dab4094f1, type: 2}
+  - {fileID: 11400000, guid: aa8530e541b377a40b3ae7c44b89a03b, type: 2}
+  - {fileID: 11400000, guid: a386e3b98e5cdc041a2a45e7523d4f5a, type: 2}
   generateRadius: 30
   clearBuffer: 12
   tilesPerFrame: 800
   refreshInterval: 0.15
   waterChance: 0.03
-  noWaterRadius: 8
+  propChance: 0.01
+  noFeatureRadius: 8
+  plainGrassTile: {fileID: 11400000, guid: 3ce444d205e079945859a72b808a284e, type: 2}
+  plainGrassChance: 0.75
 --- !u!4 &834185397
 Transform:
   m_ObjectHideFlags: 0
