@@ -345,6 +345,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &200845861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 922247323209894978, guid: 8c1c26b15058ae849bd555488248dd13, type: 3}
+  m_PrefabInstance: {fileID: 351296922389301927}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &247553438
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,6 +533,10 @@ PrefabInstance:
     - target: {fileID: 6731441507202934162, guid: b409b21eda8b92248bc6357f1d9a548d, type: 3}
       propertyPath: m_Name
       value: Cat10 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731441507202934162, guid: b409b21eda8b92248bc6357f1d9a548d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7173194352661871429, guid: b409b21eda8b92248bc6357f1d9a548d, type: 3}
       propertyPath: speed
@@ -850,6 +859,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 571227481}
+  - component: {fileID: 571227482}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -876,6 +886,22 @@ Transform:
   - {fileID: 995398122}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &571227482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571227480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70d3a5aea84b4594da8ea636592f8782, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 6731441507202934162, guid: b409b21eda8b92248bc6357f1d9a548d, type: 3}
+  spawnArea: {x: 10, y: 8}
+  spawnTimer: 5
+  player: {fileID: 200845861}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,6 +1118,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cat10 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6731441507202934162, guid: b409b21eda8b92248bc6357f1d9a548d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7173194352661871429, guid: b409b21eda8b92248bc6357f1d9a548d, type: 3}
       propertyPath: speed
       value: 1
@@ -1253,6 +1283,10 @@ PrefabInstance:
     - target: {fileID: 6731441507202934162, guid: b409b21eda8b92248bc6357f1d9a548d, type: 3}
       propertyPath: m_Name
       value: Cat10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731441507202934162, guid: b409b21eda8b92248bc6357f1d9a548d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7173194352661871429, guid: b409b21eda8b92248bc6357f1d9a548d, type: 3}
       propertyPath: speed
@@ -1496,6 +1530,10 @@ PrefabInstance:
     - target: {fileID: 6731441507202934162, guid: b409b21eda8b92248bc6357f1d9a548d, type: 3}
       propertyPath: m_Name
       value: Cat10 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6731441507202934162, guid: b409b21eda8b92248bc6357f1d9a548d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7173194352661871429, guid: b409b21eda8b92248bc6357f1d9a548d, type: 3}
       propertyPath: speed
