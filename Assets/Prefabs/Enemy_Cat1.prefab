@@ -779,7 +779,7 @@ GameObject:
   - component: {fileID: 7173194352661871429}
   m_Layer: 0
   m_Name: Enemy_Cat1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -907,6 +907,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetDestination: {fileID: 0}
   speed: 0
+  hp: 999
+  damage: 1
 --- !u!1 &6830920529457500275
 GameObject:
   m_ObjectHideFlags: 0
