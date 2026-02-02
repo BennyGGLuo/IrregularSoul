@@ -5,6 +5,7 @@ public class Character : MonoBehaviour
     public int maxHP = 1000;
     public int currentHP = 1000;
 
+    [SerializeField] StatusBar hpBar;
     public void TakeDamage(int damage)
     {
         currentHP -= damage;
@@ -13,6 +14,19 @@ public class Character : MonoBehaviour
         {
             currentHP = 0;
             Debug.Log("Character is dead GAME OVER!");
+        }
+
+        hpBar.SetState(currentHP, maxHP);
+    }
+
+    public void Heal(int amount)
+    {
+        if (currentHP <= 0) { return; }
+
+        currentHP += amount;
+        if (currentHP > maxHP)
+        {
+            currentHP = maxHP;
         }
     }
 }

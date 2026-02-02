@@ -228,7 +228,7 @@ SpriteRenderer:
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0.10980393, b: 0, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.083200455, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -579,6 +579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 374485857}
   - component: {fileID: 374485858}
+  - component: {fileID: 374485859}
   m_Layer: 0
   m_Name: PlayerHealthBarBase
   m_TagString: Untagged
@@ -645,7 +646,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2097704831
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -657,6 +658,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &374485859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374485856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acf104de68dd0414f8b351e8f5c0ee82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bar: {fileID: 35130100}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -9104,6 +9118,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6780810428185640362, guid: 8c1c26b15058ae849bd555488248dd13, type: 3}
+      propertyPath: hpBar
+      value: 
+      objectReference: {fileID: 374485859}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
