@@ -8095,6 +8095,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1479684480}
   - component: {fileID: 1479684481}
+  - component: {fileID: 1479684482}
   m_Layer: 0
   m_Name: WhipAttack (right)
   m_TagString: Untagged
@@ -8172,6 +8173,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1479684482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479684479}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6f6d797a58d624c99cd3e7977b5797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1570492202
 GameObject:
   m_ObjectHideFlags: 0
@@ -8182,6 +8195,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1570492204}
   - component: {fileID: 1570492203}
+  - component: {fileID: 1570492205}
   m_Layer: 0
   m_Name: WhipAttack( left)
   m_TagString: Untagged
@@ -8259,6 +8273,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1789696627}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1570492205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570492202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a6f6d797a58d624c99cd3e7977b5797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1789696626
 GameObject:
   m_ObjectHideFlags: 0
@@ -8305,6 +8331,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba20bddcc5cbc874ebbddf693c81e5e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToAttack: 1
   leftWhipObject: {fileID: 1570492202}
   rightWhipObject: {fileID: 1479684479}
 --- !u!4 &1813572913 stripped
