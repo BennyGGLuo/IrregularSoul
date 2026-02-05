@@ -12,6 +12,9 @@ public class Character : MonoBehaviour
     [HideInInspector] public Level level;
     [HideInInspector] public Coins coins;
 
+    private GameOver gameOver;
+    private bool isDead;
+
     private void Awake()
     {
         level = GetComponent<Level>();
@@ -25,6 +28,7 @@ public class Character : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (isDead == true) { return; }
         ApplyArmor(ref damage);
 
         currentHP -= damage;
@@ -32,7 +36,10 @@ public class Character : MonoBehaviour
         if (currentHP <= 0)
         {
             currentHP = 0;
-            Debug.Log("Character is dead GAME OVER!");
+            isDead = true;
+            //gameOver?.TheEnd(); or 
+            GetComponent<GameOver>().TheEnd();
+
         }
 
         hpBar.SetState(currentHP, maxHP);

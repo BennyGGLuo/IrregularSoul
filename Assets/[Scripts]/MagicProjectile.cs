@@ -29,7 +29,7 @@ public class MagicProjectile : MonoBehaviour
 
         if (Time.frameCount % 6 == 0)
         {
-            Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, 0.7f);
+            Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, 0.3f);
             foreach (Collider2D c in hit)
             {
                 Enemy enemy = c.GetComponent<Enemy>();
@@ -44,5 +44,11 @@ public class MagicProjectile : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        // Shows the OverlapCircle radius you use for hit detection
+        Gizmos.DrawWireSphere(transform.position, 0.1f);
     }
 }
