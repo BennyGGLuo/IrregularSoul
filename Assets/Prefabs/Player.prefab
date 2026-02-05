@@ -10,11 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 6551062503409783723}
   - component: {fileID: 2766368601747987460}
-  - component: {fileID: 3061888836533341955}
   - component: {fileID: 2144831975475924305}
   - component: {fileID: 4295661888015807517}
   - component: {fileID: 5536830454664747000}
+  - component: {fileID: 3061888836533341955}
   - component: {fileID: 6780810428185640362}
+  - component: {fileID: 8286274377646939050}
+  - component: {fileID: 4457658096255666909}
+  - component: {fileID: 4114482691654161655}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -64,22 +67,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3061888836533341955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 922247323209894978}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca79ae0e58bf1af4b979e0c5a94fdc21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
-  movementVector: {x: 0, y: 0}
-  lastHorizontalVector: 0
-  lastVerticalVector: 0
 --- !u!95 &2144831975475924305
 Animator:
   serializedVersion: 7
@@ -194,6 +181,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0.009881943, y: -0.07537472}
   m_Size: {x: 0.52774495, y: 0.9671968}
   m_Direction: 0
+--- !u!114 &3061888836533341955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922247323209894978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca79ae0e58bf1af4b979e0c5a94fdc21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  movementVector: {x: 0, y: 0}
+  lastHorizontalVector: 0
+  lastVerticalVector: 0
 --- !u!114 &6780810428185640362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,3 +211,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 1000
   currentHP: 1000
+  armor: 0
+  hpBar: {fileID: 0}
+  level: {fileID: 0}
+  coins: {fileID: 0}
+--- !u!114 &8286274377646939050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922247323209894978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e92607a762a4c0409af01589bf1a8c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  experienceBar: {fileID: 0}
+--- !u!114 &4457658096255666909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922247323209894978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecdcafa9c73cccd41804fa1b3e046897, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinAquired: 0
+  coinsCountText: {fileID: 0}
+--- !u!114 &4114482691654161655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922247323209894978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec94de4f30b72be44a7c7473ab0df4ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

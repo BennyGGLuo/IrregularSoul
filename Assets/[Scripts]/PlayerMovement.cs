@@ -15,12 +15,18 @@ public class PlayerMovement : MonoBehaviour
     [HideInInspector]
     public float lastVerticalVector;
 
-
-    void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
+
+    void Start()
+    {
+        lastHorizontalVector = -1f;
+        lastVerticalVector = 1f;
+    }
+
     void Update()
     {
         ProcessInputs();

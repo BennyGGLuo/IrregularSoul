@@ -756,33 +756,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6551062503409783723, guid: 8c1c26b15058ae849bd555488248dd13, type: 3}
   m_PrefabInstance: {fileID: 351296922389301927}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &279749804
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200845861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e92607a762a4c0409af01589bf1a8c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  experienceBar: {fileID: 111141017}
---- !u!114 &279749811
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 200845861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecdcafa9c73cccd41804fa1b3e046897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coinAquired: 0
-  coinsCountText: {fileID: 40185344}
 --- !u!1001 &284017658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9862,6 +9835,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCharacter
       objectReference: {fileID: 0}
+    - target: {fileID: 4114482691654161655, guid: 8c1c26b15058ae849bd555488248dd13, type: 3}
+      propertyPath: armorTest
+      value: 
+      objectReference: {fileID: 11400000, guid: 13eb5df82ee64bc4a8197e08b20e03d6, type: 2}
+    - target: {fileID: 4457658096255666909, guid: 8c1c26b15058ae849bd555488248dd13, type: 3}
+      propertyPath: coinAquired
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4457658096255666909, guid: 8c1c26b15058ae849bd555488248dd13, type: 3}
+      propertyPath: coinsCountText
+      value: 
+      objectReference: {fileID: 40185344}
     - target: {fileID: 6551062503409783723, guid: 8c1c26b15058ae849bd555488248dd13, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9910,6 +9895,10 @@ PrefabInstance:
       propertyPath: currentHP
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 8286274377646939050, guid: 8c1c26b15058ae849bd555488248dd13, type: 3}
+      propertyPath: experienceBar
+      value: 
+      objectReference: {fileID: 111141017}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -9922,13 +9911,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6551062503409783723, guid: 8c1c26b15058ae849bd555488248dd13, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1558910960}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 922247323209894978, guid: 8c1c26b15058ae849bd555488248dd13, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 279749804}
-    - targetCorrespondingSourceObject: {fileID: 922247323209894978, guid: 8c1c26b15058ae849bd555488248dd13, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 279749811}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c1c26b15058ae849bd555488248dd13, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
