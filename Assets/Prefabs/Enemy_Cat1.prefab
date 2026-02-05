@@ -777,6 +777,7 @@ GameObject:
   - component: {fileID: 1466187174416644083}
   - component: {fileID: 7380908809309371732}
   - component: {fileID: 7173194352661871429}
+  - component: {fileID: 1825467928714255576}
   m_Layer: 0
   m_Name: Enemy_Cat1
   m_TagString: Enemy
@@ -908,6 +909,21 @@ MonoBehaviour:
   speed: 1
   hp: 1
   damage: 1
+  experience_reward: 400
+--- !u!114 &1825467928714255576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6731441507202934162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f4b9b1023adc1747853c94ab5c1553c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropItemPrefab: {fileID: 1767036539795142345, guid: 26c55dbd3cd6e2e439424a4b06550646, type: 3}
+  chance: 0.15
 --- !u!1 &6830920529457500275
 GameObject:
   m_ObjectHideFlags: 0

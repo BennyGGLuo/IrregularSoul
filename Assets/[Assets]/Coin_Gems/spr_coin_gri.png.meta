@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 46178f6cc9269ab4c9d6591379544600
+guid: 6f8779e72bdd02149ae755355dbc3402
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4929179470246120729
-    second: Egg item_0
+      213: 3636765450789175911
+    second: spr_coin_gri_0
+  - first:
+      213: -7287818360224525318
+    second: spr_coin_gri_1
+  - first:
+      213: -6942878118906197093
+    second: spr_coin_gri_2
+  - first:
+      213: -4875957336769796633
+    second: spr_coin_gri_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,12 +109,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Egg item_0
+      name: spr_coin_gri_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 16
+        width: 12
         height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7e2f4d14369089bb0800000000000000
-      internalID: -4929179470246120729
+      spriteID: 762c3b9b8e2687230800000000000000
+      internalID: 3636765450789175911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_coin_gri_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af35f3b50d77cda90800000000000000
+      internalID: -7287818360224525318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_coin_gri_2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9b83c3c221f5af90800000000000000
+      internalID: -6942878118906197093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_coin_gri_3
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e560e9d2ae155cb0800000000000000
+      internalID: -4875957336769796633
       vertices: []
       indices: 
       edges: []
@@ -125,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Egg item_0: -4929179470246120729
+      spr_coin_gri_0: 3636765450789175911
+      spr_coin_gri_1: -7287818360224525318
+      spr_coin_gri_2: -6942878118906197093
+      spr_coin_gri_3: -4875957336769796633
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

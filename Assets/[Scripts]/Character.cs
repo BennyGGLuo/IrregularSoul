@@ -7,6 +7,13 @@ public class Character : MonoBehaviour
 
     [SerializeField] StatusBar hpBar;
 
+    [HideInInspector] public Level level;
+
+    private void Awake()
+    {
+        level = GetComponent<Level>();
+    }
+
     private void Start()
     {
         hpBar.SetState(currentHP, maxHP);
