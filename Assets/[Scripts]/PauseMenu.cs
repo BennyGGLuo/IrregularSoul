@@ -9,7 +9,24 @@ public class PauseMenu : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            panel.SetActive(true);
+            if (panel.activeInHierarchy == false)
+            {
+                OpenMenu();
+            }
+            else
+            {
+                CloseMenu();
+            }
         }
+    }
+
+    public void CloseMenu()
+    {
+        panel.SetActive(false);
+    }
+
+    public void OpenMenu()
+    {
+        panel.SetActive(true);
     }
 }
