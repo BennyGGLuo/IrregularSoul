@@ -1,10 +1,8 @@
 using UnityEngine;
 
-public class ThrowingMagicWeapon : MonoBehaviour
+public class ThrowingMagicWeapon : WeaponBase
 {
     [SerializeField] GameObject magicPrefab;
-    [SerializeField] float timeToAttack;
-    float timer;
     PlayerMovement playerMovement;
 
     private void Awake()
@@ -12,19 +10,7 @@ public class ThrowingMagicWeapon : MonoBehaviour
         playerMovement = GetComponentInParent<PlayerMovement>();
     }
 
-    private void Update()
-    {
-        if (timer < timeToAttack)
-        {
-            timer += Time.deltaTime;
-            return;
-        }
-
-        timer = 0;
-        SpawnMagic();
-    }
-
-    private void SpawnMagic()
+    public override void Attack()
     {
         GameObject throwMagic = Instantiate(magicPrefab);
         throwMagic.transform.position = transform.position;
