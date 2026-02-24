@@ -28,4 +28,9 @@ public abstract class WeaponBase : MonoBehaviour
     }
 
     public abstract void Attack();
+
+    public virtual void PostDamage(int damage, Vector3 targetPosition)
+    {
+        MessageSystem.instance.PostMessage(damage.ToString(), targetPosition);
+    }
 }
