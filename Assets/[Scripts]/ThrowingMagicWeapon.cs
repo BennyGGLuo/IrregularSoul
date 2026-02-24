@@ -14,6 +14,8 @@ public class ThrowingMagicWeapon : WeaponBase
     {
         GameObject throwMagic = Instantiate(magicPrefab);
         throwMagic.transform.position = transform.position;
-        throwMagic.GetComponent<MagicProjectile>().SetDirection(playerMovement.lastHorizontalVector, 0f);
+        MagicProjectile throwingMagicProjectile = throwMagic.GetComponent<MagicProjectile>();
+        throwingMagicProjectile.SetDirection(playerMovement.lastHorizontalVector, 0f);
+        throwingMagicProjectile.damage = weaponStats.damage;
     }
 }
