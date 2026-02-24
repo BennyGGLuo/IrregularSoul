@@ -504,7 +504,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 227, y: 321}
-  m_SizeDelta: {x: 300, y: 200}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &85010758
 MonoBehaviour:
@@ -529,7 +529,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.990566, g: 0.126157, b: 0.126157, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -550,14 +550,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1541291097}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: Upgrade
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1485,7 +1485,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -214, y: 0}
-  m_SizeDelta: {x: 300, y: 200}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &297467715
 MonoBehaviour:
@@ -1510,7 +1510,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.990566, g: 0.126157, b: 0.126157, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -1531,14 +1531,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1541291097}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: Upgrade
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2480,7 +2480,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 654, y: 321}
-  m_SizeDelta: {x: 300, y: 200}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &670352620
 MonoBehaviour:
@@ -2505,7 +2505,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.990566, g: 0.126157, b: 0.126157, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2526,14 +2526,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1541291097}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: Upgrade
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4604,7 +4604,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1216136619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11023,6 +11023,7 @@ GameObject:
   - component: {fileID: 1541291094}
   - component: {fileID: 1541291096}
   - component: {fileID: 1541291097}
+  - component: {fileID: 1541291098}
   m_Layer: 0
   m_Name: ---GAMEMANAGER---
   m_TagString: Untagged
@@ -11088,6 +11089,19 @@ MonoBehaviour:
   - {fileID: 297467718}
   - {fileID: 85010761}
   - {fileID: 670352623}
+--- !u!114 &1541291098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541291093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1ff88a7ef02bf04c8def5862dc88dd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 6776230873259628812}
 --- !u!1 &1701808616
 GameObject:
   m_ObjectHideFlags: 0
@@ -11735,7 +11749,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: -654, y: 319}
-  m_SizeDelta: {x: 300, y: 200}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1916985306
 MonoBehaviour:
@@ -11760,7 +11774,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_PressedColor: {r: 0.745283, g: 0.6784888, b: 0.6784888, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -11781,10 +11795,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1541291097}
         m_TargetAssemblyTypeName: UpgradeManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+        m_MethodName: Upgrade
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12671,7 +12685,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   experienceBar: {fileID: 111141017}
   upgradePanel: {fileID: 1541291097}
-  upgrades: []
+  upgrades:
+  - {fileID: 11400000, guid: fbe864afb65dde640bf12ab692ab029f, type: 2}
+  - {fileID: 11400000, guid: 6b4ca7bf921878e45b4d22cfe7038cb0, type: 2}
+  - {fileID: 11400000, guid: 417ce978607eb3947a641efa589aa131, type: 2}
+  acquiredUpgrades: []
 --- !u!114 &8511464733568848142
 MonoBehaviour:
   m_ObjectHideFlags: 0

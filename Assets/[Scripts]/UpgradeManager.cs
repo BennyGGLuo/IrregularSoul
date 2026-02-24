@@ -12,19 +12,53 @@ public class UpgradeManager : MonoBehaviour
         pauseManager = GetComponent<PauseManager>();
     }
 
+    private void Start()
+    {
+        HideButtons();
+    }
+
     public void OpenPanel(List<UpgradeData> upgradeDatas)
     {
+        Clean();
         pauseManager.PauseGame();
         panel.SetActive(true);
+
+
+
         for (int i = 0; i < upgradeDatas.Count; i++)
         {
+            upgradeButtons[i].gameObject.SetActive(true);
             upgradeButtons[i].Set(upgradeDatas[i]);
         }
     }
 
     public void ClosePanel()
     {
+        HideButtons();
         pauseManager.UnPauseGame();
         panel.SetActive(false);
+    }
+
+    private void HideButtons()
+    {
+        for (int i = 0; i < upgradeButtons.Count; i++)
+        {
+            upgradeButtons[i].gameObject.SetActive(false);
+        }
+    }
+
+    public void Upgrade(int pressedButtonID)
+    {
+        //Debug.Log("Player pressed : " + pressedButtonID.ToString());
+        GameManager.instance.playerTransform.GetComponent<Level>().Upgrade(pressedButtonID);
+        ClosePanel();
+    }
+
+    public void Clean()
+    {
+        for (int i = 0; i < upgradeButtons.Count;i++)
+        {
+            upgradeButtons[i].Clean();
+        }
     }
 }
