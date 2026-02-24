@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d78fb601f741b0d4c823cc917b07795c, type: 3}
+  m_Name: Projectile Magic (Blunt Stun Damage)
+  m_EditorClassIdentifier: 
+  upgradeType: 0
+  Name: Blunt Projectile Magic
+  icon: {fileID: -1623642405698343859, guid: c0d8648baeb99294fb7cb7bb85ef7e44, type: 3}
+  weaponData: {fileID: 0}
