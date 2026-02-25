@@ -9,6 +9,9 @@ public class MagicProjectile : MonoBehaviour
 
     bool hitDetected = false;
 
+    float ttl = 6f;
+
+
     public void SetDirection(float dir_x, float dir_y)
     {
         direction = new Vector3 (dir_x, dir_y);
@@ -43,6 +46,12 @@ public class MagicProjectile : MonoBehaviour
             {
                 Destroy(gameObject);
             }
+        }
+
+        ttl -= Time.deltaTime;
+        if (ttl < 0f)
+        {
+            Destroy(gameObject);
         }
     }
 

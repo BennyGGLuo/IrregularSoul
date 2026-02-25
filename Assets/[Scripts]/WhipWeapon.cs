@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
 
@@ -31,6 +32,11 @@ public class WhipWeapon : WeaponBase
 
     public override void Attack()
     {
+        StartCoroutine(AttackProcess());
+    }
+
+    IEnumerator AttackProcess()
+    {
         bool facingRight = playerMovement.lastHorizontalVector > 0;
 
         if (facingRight)
@@ -42,6 +48,8 @@ public class WhipWeapon : WeaponBase
 
         Collider2D[] colliders = Physics2D.OverlapBoxAll(centerT.position, attackSize, 0f);
         ApplyDamage(colliders);
+
+        yield return new WaitForSeconds(0.3f);
     }
 
     private void OnDrawGizmosSelected()
