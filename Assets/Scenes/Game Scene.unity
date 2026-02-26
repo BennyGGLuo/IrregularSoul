@@ -3202,8 +3202,9 @@ GameObject:
   - component: {fileID: 834185397}
   - component: {fileID: 834185396}
   - component: {fileID: 834185398}
+  - component: {fileID: 834185399}
   m_Layer: 0
-  m_Name: WorldGenerator
+  m_Name: ---WORLDGENERATOR---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3281,6 +3282,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
+--- !u!114 &834185399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 834185395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 360d8c30f15a204488a83207d1f4bbf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stageData: {fileID: 11400000, guid: 1d4aa73621da82b45a7f9e86576112ee, type: 2}
+  enemyManager: {fileID: 571227482}
 --- !u!1 &956211655
 GameObject:
   m_ObjectHideFlags: 0
