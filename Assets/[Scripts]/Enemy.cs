@@ -1,19 +1,42 @@
+using System;
 using UnityEngine;
+
+[Serializable]
+public class EnemyStats
+{
+    public int hp = 999;
+    public int damage = 1;
+    public int experience_reward = 400;
+    public float movementSpeed = 1f;
+
+    public EnemyStats() { }
+
+    public EnemyStats(EnemyStats other)
+    {
+        hp = other.hp;
+        damage = other.damage;
+        experience_reward = other.experience_reward;
+        movementSpeed = other.movementSpeed;
+    }
+
+    internal void ApplyProgress(float progress)
+    {
+        this.hp = (int)(hp * progress);
+        this.damage = (int)(damage * progress);
+    }
+}
+
+
 
 public class Enemy : MonoBehaviour, IDamageable
 {
     Transform targetDestination;
-    [SerializeField] float speed;
-
     GameObject targetGameObject;
     Rigidbody2D rb;
-
-    [SerializeField] int hp = 999;
-    [SerializeField] int damage = 1;
-    [SerializeField] int experience_reward = 400;
-
     Character targetCharacter;
 
+    //public EnemyStats stats;
+    [SerializeField] EnemyStats stats = new EnemyStats();
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -22,7 +45,7 @@ public class Enemy : MonoBehaviour, IDamageable
     private void FixedUpdate()
     {
         Vector3 direction = (targetDestination.position - transform.position).normalized;
-        rb.linearVelocity = direction * speed;
+        rb.linearVelocity = direction * stats.movementSpeed;
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -41,16 +64,16 @@ public class Enemy : MonoBehaviour, IDamageable
             targetCharacter = targetGameObject.GetComponent<Character>();
         }
 
-        targetCharacter.TakeDamage(damage);
+        targetCharacter.TakeDamage(stats.damage);
     }
 
     public void TakeDamage(int damage)
     {
-        hp -= damage;
+        stats.hp -= damage;
 
-        if (hp < 1)
+        if (stats.hp < 1)
         {
-            targetGameObject.GetComponent<Level>().AddExperience(experience_reward);
+            targetGameObject.GetComponent<Level>().AddExperience(stats.experience_reward);
             GetComponent<DropOnDestroy>().CheckDrop();
             Destroy(gameObject);
         }
@@ -60,5 +83,15 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         targetGameObject = target;
         targetDestination = target.transform;
+    }
+
+    public void SetStats(EnemyStats newStats)
+    {
+        stats = new EnemyStats(newStats);
+    }
+
+    internal void UpdateStatsForProgress(float progress)
+    {
+        stats.ApplyProgress(progress);
     }
 }

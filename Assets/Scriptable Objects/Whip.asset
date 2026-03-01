@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Whip
   stats:
-    damage: 100
+    damage: 60
     timeToAttack: 4
     numberOfAttacks: 1
   weaponBasePrefab: {fileID: 3177545556722824901, guid: 5922bcc9263e5af429a89dbd6e14abad, type: 3}

@@ -6,6 +6,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] Vector2 spawnArea;
     [SerializeField] float spawnTimer;
     [SerializeField] GameObject player;
+    [SerializeField] StageProgress stageProgress;
     //float timer;
 
     //private void Update()
@@ -34,6 +35,20 @@ public class EnemyManager : MonoBehaviour
         Vector3 pos = GenerateRandomPosition() + player.transform.position;
         GameObject enemyObj = Instantiate(data.enemyPrefab, pos, Quaternion.identity, transform);
         enemyObj.GetComponent<Enemy>().SetTarget(player);
+
+        Enemy enemyComp = enemyObj.GetComponent<Enemy>();
+        if (enemyComp == null)
+        {
+            Debug.LogError($"Prefab '{data.enemyPrefab.name}' has no Enemy component.", enemyObj);
+            return;
+        }
+
+        enemyComp.SetTarget(player);
+
+        if (data.stats != null)
+            enemyComp.SetStats(data.stats);
+
+        enemyComp.UpdateStatsForProgress(stageProgress.Progress);
     }
     private Vector3 GenerateRandomPosition()
     {

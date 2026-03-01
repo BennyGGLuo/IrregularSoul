@@ -14,3 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayName: 
   enemyPrefab: {fileID: 2684062620391834459, guid: 6c7b9e204856ca443a9a69f7b4fd4744, type: 3}
+  stats:
+    hp: 90
+    damage: 1
+    experience_reward: 400
+    movementSpeed: 2
