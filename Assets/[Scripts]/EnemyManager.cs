@@ -18,18 +18,23 @@ public class EnemyManager : MonoBehaviour
     //    }
     //}
 
-    public void SpawnEnemy()
+    //public void SpawnEnemy()
+    //{
+    //    Vector3 position = GenerateRandomPosition();
+
+    //    position += player.transform.position;
+
+    //    GameObject newEnemy = Instantiate(enemy);
+    //    newEnemy.transform.position = position;
+    //    newEnemy.GetComponent<Enemy>().SetTarget(player);
+    //    newEnemy.transform.parent = transform;
+    //}
+    public void SpawnEnemy(EnemyData data)
     {
-        Vector3 position = GenerateRandomPosition();
-
-        position += player.transform.position;
-
-        GameObject newEnemy = Instantiate(enemy);
-        newEnemy.transform.position = position;
-        newEnemy.GetComponent<Enemy>().SetTarget(player);
-        newEnemy.transform.parent = transform;
+        Vector3 pos = GenerateRandomPosition() + player.transform.position;
+        GameObject enemyObj = Instantiate(data.enemyPrefab, pos, Quaternion.identity, transform);
+        enemyObj.GetComponent<Enemy>().SetTarget(player);
     }
-
     private Vector3 GenerateRandomPosition()
     {
         Vector3 position = new Vector3();

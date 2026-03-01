@@ -7,7 +7,7 @@ public class StageEvent
 {
     public float time;
     public string message;
-    public Enemy enemyToSpawn;
+    public EnemyData enemyToSpawn;
     public int count;
 }
 

@@ -15,13 +15,13 @@ MonoBehaviour:
   stageEvents:
   - time: 0
     message: Hello, 5 seconds
-    enemyToSpawn: {fileID: 0}
+    enemyToSpawn: {fileID: 11400000, guid: bd47de6c17766654d8186f8ed4b42015, type: 2}
     count: 3
   - time: 10
     message: '10 seconds '
-    enemyToSpawn: {fileID: 0}
+    enemyToSpawn: {fileID: 11400000, guid: 118518fec9c755e4aa02536a5eb09391, type: 2}
     count: 10
   - time: 20
     message: This is 15 seconds
-    enemyToSpawn: {fileID: 0}
+    enemyToSpawn: {fileID: 11400000, guid: bd47de6c17766654d8186f8ed4b42015, type: 2}
     count: 20
