@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class StageEeventManager : MonoBehaviour
@@ -6,12 +7,20 @@ public class StageEeventManager : MonoBehaviour
     [SerializeField] EnemyManager enemyManager;
     StageTime stageTime;
     int eventIndexer;
+    PlayerWinManager playerWin;
 
     private void Awake()
     {
         stageTime = GetComponent<StageTime>();
     }
 
+    [Obsolete]
+    private void Start()
+    {
+        playerWin = FindObjectOfType<PlayerWinManager>();
+    }
+
+    [Obsolete]
     private void Update()
     {
         //if (eventIndexer >= stageData.stageEvents.Count) { return; }
@@ -35,6 +44,7 @@ public class StageEeventManager : MonoBehaviour
                     break;
 
                 case StageEventType.WinStage:
+                    WimStage();
                     break;
                 default:
                     break;
@@ -43,6 +53,12 @@ public class StageEeventManager : MonoBehaviour
             Debug.Log(stageData.stageEvents[eventIndexer].message);
             eventIndexer += 1;
         }
+    }
+
+    [Obsolete]
+    private void WimStage()
+    {
+        playerWin.Win();
     }
 
     private void SpawnEnemy()
