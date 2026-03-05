@@ -32,7 +32,7 @@ public class EnemyManager : MonoBehaviour
     //}
     public void SpawnEnemy(EnemyData data)
     {
-        Vector3 pos = GenerateRandomPosition() + player.transform.position;
+        Vector3 pos = UtilityTools.GenerateRandomPositionSquarePattern(spawnArea) + player.transform.position;
         GameObject enemyObj = Instantiate(data.enemyPrefab, pos, Quaternion.identity, transform);
         enemyObj.GetComponent<Enemy>().SetTarget(player);
 
@@ -50,24 +50,5 @@ public class EnemyManager : MonoBehaviour
 
         enemyComp.UpdateStatsForProgress(stageProgress.Progress);
     }
-    private Vector3 GenerateRandomPosition()
-    {
-        Vector3 position = new Vector3();
-
-        float f = UnityEngine.Random.value > 0.5f ? -1f : 1f;
-        if (UnityEngine.Random.value > 0.5f)
-        {
-            position.x = UnityEngine.Random.Range(-spawnArea.x, spawnArea.x);
-            position.y = spawnArea.y * f;
-        }
-        else
-        {
-            position.y = UnityEngine.Random.Range(-spawnArea.y, spawnArea.y);
-            position.x = spawnArea.x * f;
-        }
-
-        position.z = 0;
-
-        return position;
-    }
+    
 }
