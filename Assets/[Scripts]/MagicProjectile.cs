@@ -7,7 +7,7 @@ public class MagicProjectile : MonoBehaviour
     [SerializeField] float speed;
     public int damage = 5;
 
-    bool hitDetected = false;
+    //bool hitDetected = false;
 
     float ttl = 6f;
 
@@ -33,19 +33,51 @@ public class MagicProjectile : MonoBehaviour
         if (Time.frameCount % 6 == 0)
         {
             Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, 0.3f);
+            //foreach (Collider2D c in hit)
+            //{
+            //    IDamageable enemy = c.GetComponent<IDamageable>();
+            //    if (enemy != null)
+            //    {
+            //        PostDamage(damage, transform.position);
+            //        enemy.TakeDamage(damage);
+            //        break;
+            //    }
+            //}
+            //if (hitDetected == true)
+            //{
+            //    Destroy(gameObject);
+            //}
             foreach (Collider2D c in hit)
             {
-                IDamageable enemy = c.GetComponent<IDamageable>();
-                if (enemy != null)
+                if (c == null) continue;
+
+                // Ignore self
+                if (c.gameObject == gameObject) continue;
+
+                // Ignore player
+                if (c.GetComponent<PlayerMovement>() != null) continue;
+
+                // Ignore player weapon parent objects
+                if (c.GetComponentInParent<WeaponBase>() != null) continue;
+
+                // 1. Damage enemies
+                IDamageable damageable = c.GetComponent<IDamageable>();
+                if (damageable != null)
                 {
                     PostDamage(damage, transform.position);
-                    enemy.TakeDamage(damage);
-                    break;
+                    damageable.TakeDamage(damage);
+                    Destroy(gameObject);
+                    return;
                 }
-            }
-            if (hitDetected == true)
-            {
-                Destroy(gameObject);
+
+                // 2. Destroy if it hits obstacle layer
+                if (c.gameObject.layer == LayerMask.NameToLayer("Obstacle"))
+                {
+                    Destroy(gameObject);
+                    return;
+                }
+
+                // Anything else gets ignored
             }
         }
 

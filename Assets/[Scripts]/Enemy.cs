@@ -37,6 +37,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
     //public EnemyStats stats;
     [SerializeField] EnemyStats stats = new EnemyStats();
+    public EnemyStats Stats => stats;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

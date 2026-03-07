@@ -34,26 +34,36 @@ public class StageEeventManager : MonoBehaviour
             switch (e.eventType)
             {
                 case StageEventType.SpawnEnemy:
-                    for (int i = 0; i < e.count; i++)
-                        enemyManager.SpawnEnemy(e.enemyToSpawn);
+                    //for (int i = 0; i < e.count; i++)
+                    //    enemyManager.SpawnEnemy(e.enemyToSpawn, false);
+                    SpawnEnemy(e, false);
                     break;
 
                 case StageEventType.SpawnObject:
-                    for (int i = 0; i < e.count; i++)
-                        SpawnObject(e.objectToSpawn);
+                    //for (int i = 0; i < e.count; i++)
+                    //    SpawnObject(e.objectToSpawn);
+                    SpawnObject(e);
                     break;
 
                 case StageEventType.WinStage:
                     WimStage();
                     break;
+                case StageEventType.SpawnBoss:
+                    SpawnEnemy(e, true);
+                    break;
                 default:
                     break;
             }
 
-            Debug.Log(stageData.stageEvents[eventIndexer].message);
+            Debug.Log(e.message);
             eventIndexer += 1;
         }
     }
+
+    //private void SpawnBoss()
+    //{
+    //    SpawnEnemy(true);
+    //}
 
     [Obsolete]
     private void WimStage()
@@ -61,14 +71,17 @@ public class StageEeventManager : MonoBehaviour
         playerWin.Win();
     }
 
-    private void SpawnEnemy()
+    private void SpawnEnemy(StageEvent e, bool bossEnemy)
     {
-        enemyManager.SpawnEnemy(stageData.stageEvents[eventIndexer].enemyToSpawn);
+        for (int i = 0; i < e.count; i++)
+        {
+            enemyManager.SpawnEnemy(e.enemyToSpawn, bossEnemy);
+        }
     }
 
-    private void SpawnObject(GameObject prefab)
+    private void SpawnObject(StageEvent e)
     {
-        if (prefab == null)
+        if (e.objectToSpawn == null)
         {
             Debug.LogWarning("SpawnObject event has no prefab assigned.");
             return;
@@ -79,11 +92,12 @@ public class StageEeventManager : MonoBehaviour
             return;
         }
 
-        Vector3 playerPos = GameManager.instance.playerTransform.position;
-        Vector3 positionToSpawn = playerPos + UtilityTools.RandomPointInRing(10f, 20f);
+        for (int i = 0; i < e.count; i++)
+        {
+            Vector3 playerPos = GameManager.instance.playerTransform.position;
+            Vector3 positionToSpawn = playerPos + UtilityTools.RandomPointInRing(10f, 20f);
 
-        SpawnManager.instance.SpawnObject(positionToSpawn, prefab);
+            SpawnManager.instance.SpawnObject(positionToSpawn, e.objectToSpawn);
+        }
     }
-
-    
 }

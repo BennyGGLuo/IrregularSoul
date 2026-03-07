@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 3
   tags:
   - Enemy
+  - Obstacle
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Obstacle
   - Water
   - UI
   - 
@@ -50,6 +51,9 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 2197262465
+    locked: 0
+  - name: Obstacles
+    uniqueID: 3823943013
     locked: 0
   m_RenderingLayers:
   - Default
