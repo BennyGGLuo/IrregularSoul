@@ -16,6 +16,8 @@ public class Character : MonoBehaviour
 
     private GameOver gameOver;
     private bool isDead;
+    [SerializeField] DataContainer dataContainer;
+    public float damageBonus;
 
     private void Awake()
     {
@@ -25,7 +27,20 @@ public class Character : MonoBehaviour
 
     private void Start()
     {
+        ApplyPersistentUpgrades();
         hpBar.SetState(currentHP, maxHP);
+    }
+
+    private void ApplyPersistentUpgrades()
+    {
+        int hpUpgradeLevel = dataContainer.GetUpgradeLevel(PlayerPersistentUpgrades.HP);
+
+        maxHP += maxHP / 10 * hpUpgradeLevel;
+        //currentHP = maxHP;
+
+        int damageUpgradeLevel = dataContainer.GetUpgradeLevel(PlayerPersistentUpgrades.Damage);
+
+        damageBonus = 1f + 0.1f * damageUpgradeLevel;
     }
 
     private void Update()

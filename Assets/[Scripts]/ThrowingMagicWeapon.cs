@@ -28,7 +28,7 @@ public class ThrowingMagicWeapon : WeaponBase
 
             MagicProjectile throwingMagicProjectile = throwMagic.GetComponent<MagicProjectile>();
             throwingMagicProjectile.SetDirection(playerMovement.lastHorizontalVector, 0f);
-            throwingMagicProjectile.damage = weaponStats.damage;
+            throwingMagicProjectile.damage = GetDamage();
         } 
     }
 }

@@ -14248,6 +14248,8 @@ MonoBehaviour:
   hpBar: {fileID: 6742790839806494392}
   level: {fileID: 0}
   coins: {fileID: 0}
+  dataContainer: {fileID: 11400000, guid: 1146cc6a51c12dd45b96c91606fc7d01, type: 2}
+  damageBonus: 0
 --- !u!114 &6742790839806494392
 MonoBehaviour:
   m_ObjectHideFlags: 0

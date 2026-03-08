@@ -7,6 +7,7 @@ public abstract class WeaponBase : MonoBehaviour
     public WeaponStats weaponStats;
 
     float timer;
+    Character wielder;
 
     public void Update()
     {
@@ -28,6 +29,12 @@ public abstract class WeaponBase : MonoBehaviour
 
     public abstract void Attack();
 
+    public int GetDamage()
+    {
+        int damage = (int)(weaponData.stats.damage * wielder.damageBonus);
+        return damage;
+    }
+
     public virtual void PostDamage(int damage, Vector3 targetPosition)
     {
         MessageSystem.instance.PostMessage(damage.ToString(), targetPosition);
@@ -36,5 +43,10 @@ public abstract class WeaponBase : MonoBehaviour
     public void Upgrade(UpgradeData upgradeData)
     {
         weaponStats.Sum(upgradeData.weaponUpgradeStats);
+    }
+
+    public void AddOwnerCharacter(Character character)
+    {
+        wielder = character;
     }
 }
