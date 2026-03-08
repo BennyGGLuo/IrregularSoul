@@ -87,7 +87,8 @@ public class Level : MonoBehaviour
         selectedUpgrades.Clear();
         selectedUpgrades.AddRange(GetUpgrades(4));
 
-        upgradePanel.OpenPanel(GetUpgrades(4));
+        //upgradePanel.OpenPanel(GetUpgrades(4));
+        upgradePanel.OpenPanel(selectedUpgrades);
         experience -= TO_LEVEL_UP;
         level += 1;
         experienceBar.SetLevelText(level);

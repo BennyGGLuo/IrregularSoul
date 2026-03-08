@@ -50,6 +50,6 @@ MonoBehaviour:
     timeToAttack: 0
     numberOfAttacks: 0
   vectorOfAttack: {x: 0, y: 0}
-  attackDirection: 3
+  attackDirection: 2
   magicPrefab: {fileID: 6873586285474017461, guid: 633eb23aead15e44296b68963c2d1d7b, type: 3}
   spread: 0.5

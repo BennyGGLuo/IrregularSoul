@@ -13,14 +13,20 @@ MonoBehaviour:
   m_Name: Stage 1 Data
   m_EditorClassIdentifier: 
   stageEvents:
-  - eventType: 1
+  - eventType: 0
     time: 5
-    message: Boss has spawn
+    message: 100 enemies spawned
+    enemyToSpawn: {fileID: 11400000, guid: bd47de6c17766654d8186f8ed4b42015, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 100
+  - eventType: 1
+    time: 25
+    message: 
     enemyToSpawn: {fileID: 11400000, guid: 118518fec9c755e4aa02536a5eb09391, type: 2}
     objectToSpawn: {fileID: 0}
-    count: 2
+    count: 0
   - eventType: 3
-    time: 25
+    time: 60
     message: GG
     enemyToSpawn: {fileID: 0}
     objectToSpawn: {fileID: 0}
