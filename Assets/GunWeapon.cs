@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class ThrowingMagicWeapon : WeaponBase
+public class GunWeapon : WeaponBase
 {
-    [SerializeField] GameObject magicPrefab;
+    [SerializeField] GameObject bulletPrefab;
     [SerializeField] float spread = 0.5f;
 
     public override void Attack()
@@ -10,12 +10,12 @@ public class ThrowingMagicWeapon : WeaponBase
         UpdateVectorOfAttack();
         for (int i = 0; i < weaponStats.numberOfAttacks; i++)
         {
-            GameObject throwMagic = Instantiate(magicPrefab);
+            GameObject throwMagic = Instantiate(bulletPrefab);
             Vector3 newMagicPosition = transform.position;
 
             if (weaponStats.numberOfAttacks > 1)
             {
-                newMagicPosition.y -= (spread * (weaponStats.numberOfAttacks-1)) / 2; // Calculate offset
+                newMagicPosition.y -= (spread * (weaponStats.numberOfAttacks - 1)) / 2; // Calculate offset
                 newMagicPosition.y += i * spread; // Spreading the magic along the line
             }
 
@@ -24,6 +24,6 @@ public class ThrowingMagicWeapon : WeaponBase
             MagicProjectile throwingMagicProjectile = throwMagic.GetComponent<MagicProjectile>();
             throwingMagicProjectile.SetDirection(vectorOfAttack.x, vectorOfAttack.y);
             throwingMagicProjectile.damage = GetDamage();
-        } 
+        }
     }
 }

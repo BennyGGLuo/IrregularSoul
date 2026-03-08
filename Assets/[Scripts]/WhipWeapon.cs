@@ -16,20 +16,7 @@ public class WhipWeapon : WeaponBase
         playerMovement = GetComponentInParent<PlayerMovement>();
     }
 
-    private void ApplyDamage(Collider2D[] colliders)
-    {
-        int damage = GetDamage();
-        for (int i = 0; i < colliders.Length; i++)
-        {
-            //Debug.Log(colliders[i].gameObject.name);
-            IDamageable e = colliders[i].GetComponent<IDamageable>();
-            if (e != null)
-            {
-                PostDamage(damage, colliders[i].transform.position);
-                e.TakeDamage(damage);
-            }
-        }
-    }
+    
 
     public override void Attack()
     {
@@ -38,7 +25,7 @@ public class WhipWeapon : WeaponBase
 
     IEnumerator AttackProcess()
     {
-        bool facingRight = playerMovement.lastHorizontalVector > 0;
+        bool facingRight = playerMovement.lastHorizontalDeCoupledVector > 0;
 
         if (facingRight)
             rightWhipObject.SetActive(true);
@@ -58,7 +45,7 @@ public class WhipWeapon : WeaponBase
         // In edit mode, playerMovement might be null, so fall back to left.
         bool facingRight = false;
         if (playerMovement != null)
-            facingRight = playerMovement.lastHorizontalVector > 0;
+            facingRight = playerMovement.lastHorizontalDeCoupledVector > 0;
 
         Transform centerT = facingRight ? rightWhipObject?.transform : leftWhipObject?.transform;
         if (centerT == null) return;

@@ -11,9 +11,13 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 movementVector;
     private Vector2 lastMoveDirection;
     [HideInInspector]
-    public float lastHorizontalVector;
+    public float lastHorizontalDeCoupledVector;
     [HideInInspector]
-    public float lastVerticalVector;
+    public float lastVerticalDeCoupledVector;
+    [HideInInspector]
+    public float lastHorizontalCoupledVector;
+    [HideInInspector]
+    public float lastVerticalCoupledVector;
 
     private void Awake()
     {
@@ -23,8 +27,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        lastHorizontalVector = -1f;
-        lastVerticalVector = 1f;
+        lastHorizontalDeCoupledVector = -1f;
+        lastVerticalDeCoupledVector = 1f;
+
+        lastHorizontalCoupledVector = -1f;
+        lastVerticalCoupledVector = 1f;
     }
 
     void Update()
@@ -34,11 +41,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (movementVector.x != 0)
         {
-            lastHorizontalVector = movementVector.x;
+            lastHorizontalDeCoupledVector = movementVector.x;
         }
         if (movementVector.y != 0)
         {
-            lastVerticalVector = movementVector.y;
+            lastVerticalDeCoupledVector = movementVector.y;
         }
     }
     private void FixedUpdate()
@@ -50,6 +57,12 @@ public class PlayerMovement : MonoBehaviour
         // Store last move direction when we stop moving
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
+
+        if (movementVector.x != 0 || movementVector.y != 0)
+        {
+            lastHorizontalCoupledVector = movementVector.x;
+            lastVerticalCoupledVector = movementVector.y;
+        }
 
         if ((moveX == 0 && moveY == 0) && (movementVector.x != 0 || movementVector.y != 0))
         {
