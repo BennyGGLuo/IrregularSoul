@@ -96,18 +96,52 @@ public class Level : MonoBehaviour
         experienceBar.SetLevelText(level);
     }
 
+    // Old method
+    //public List<UpgradeData> GetUpgrades(int count)
+    //{
+    //    List<UpgradeData> upgradeList = new List<UpgradeData>();
+
+    //    if (count > upgrades.Count)
+    //    {
+    //        count = upgrades.Count;
+    //    }
+
+    //    for (int i = 0; i < count; i++)
+    //    {
+    //        upgradeList.Add(upgrades[Random.Range(0, upgrades.Count)]);
+    //    }
+
+    //    return upgradeList;
+    //}
+
+    // New Method
     public List<UpgradeData> GetUpgrades(int count)
     {
         List<UpgradeData> upgradeList = new List<UpgradeData>();
+        bool unlockAlreadyAdded = false;
+        int safety = 0;
 
-        if (count > upgrades.Count)
+        while (upgradeList.Count < count && safety < 100)
         {
-            count = upgrades.Count;
-        }
+            safety++;
 
-        for (int i = 0; i < count; i++)
-        {
-            upgradeList.Add(upgrades[Random.Range(0, upgrades.Count)]);
+            UpgradeData randomUpgrade = upgrades[Random.Range(0, upgrades.Count)];
+
+            bool isUnlock =
+                randomUpgrade.upgradeType == UpgradeType.GetWeapon ||
+                randomUpgrade.upgradeType == UpgradeType.GetItem;
+
+            if (isUnlock && unlockAlreadyAdded)
+            {
+                continue;
+            }
+
+            if (isUnlock)
+            {
+                unlockAlreadyAdded = true;
+            }
+
+            upgradeList.Add(randomUpgrade);
         }
 
         return upgradeList;
