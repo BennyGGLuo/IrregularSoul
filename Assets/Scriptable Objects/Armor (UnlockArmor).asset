@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeType: 3
   Name: Unlock and equip Armor
   Description: 
-  icon: {fileID: 8885494730473029114, guid: a2a3156fa1c7ba141b0d1b24cc9a4eca, type: 3}
+  icon: {fileID: -5151892568812380453, guid: 8fecf68b57c77ab46b28d59617b41013, type: 3}
   weaponData: {fileID: 0}
   weaponUpgradeStats:
     damage: 0

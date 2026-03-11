@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Whip Upgrade (Attack Speed)
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: Quick Strikes
+  Name: Whip Quick Strikes
   Description: 
-  icon: {fileID: 7846733846128014878, guid: 684d1bcc7adaec84b81924eee4cef476, type: 3}
+  icon: {fileID: 6292612254322899603, guid: 346bd163d155fdf468750e4dd759f285, type: 3}
   weaponData: {fileID: 11400000, guid: 86de6c31411a4904bb2dfd2f822e58e2, type: 2}
   weaponUpgradeStats:
     damage: 0

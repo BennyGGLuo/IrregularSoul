@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Magic Upgrade (Attack Speed)
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: Handling/Attack Speed
+  Name: Magic Attack Speed
   Description: 
   icon: {fileID: 6292612254322899603, guid: 346bd163d155fdf468750e4dd759f285, type: 3}
   weaponData: {fileID: 11400000, guid: 3584310e80f4da24882237b127d8e6be, type: 2}

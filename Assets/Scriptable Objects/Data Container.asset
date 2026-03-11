@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd42e71170d1504fb2043ba6e4a76b0, type: 3}
   m_Name: Data Container
   m_EditorClassIdentifier: 
-  coins: 59
+  coins: 0
   stageCompletion: 01
   upgrades:
   - persistentUpgrades: 0

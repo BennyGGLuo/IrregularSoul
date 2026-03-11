@@ -4163,9 +4163,6 @@ MonoBehaviour:
   generateWater: 1
   waterTiles:
   - {fileID: 11400000, guid: 1bc3f6cc5e1961b458088df2bf781123, type: 2}
-  - {fileID: 11400000, guid: c28f2bb690686ac49a5fb23bc258bbc8, type: 2}
-  - {fileID: 11400000, guid: 075cf1aab560c214ebd17645fb5aff52, type: 2}
-  - {fileID: 11400000, guid: 6f1b6ab62acc7dd40ae6b6fd79fcfbcc, type: 2}
   generateProps: 1
   propTiles:
   - {fileID: 11400000, guid: 1ce17ea2d1c27dc48b6bc41a82d6f4a9, type: 2}
@@ -14907,6 +14904,7 @@ MonoBehaviour:
   upgradePanel: {fileID: 1541291097}
   upgrades:
   - {fileID: 11400000, guid: ff193640d706d3943b382ca4fbc55fc1, type: 2}
+  - {fileID: 11400000, guid: 5fc6de567c3fe1949afdf1f8dd7a45bb, type: 2}
   acquiredUpgrades: []
   upgradeAvailableOnStart: []
 --- !u!114 &8511464733568848142
