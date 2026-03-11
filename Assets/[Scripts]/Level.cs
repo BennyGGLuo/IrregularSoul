@@ -26,7 +26,8 @@ public class Level : MonoBehaviour
     {
         get
         {
-            return level * 1000;
+            //return level * 1000;
+            return 500 + (level - 1) * 250;
         }
     }
 

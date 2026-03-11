@@ -10,12 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d78fb601f741b0d4c823cc917b07795c, type: 3}
-  m_Name: Magic Upgrade (Blunt Stun Damage)
+  m_Name: Whip Upgrade (Attack Speed)
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: Blunt Projectile Magic
-  icon: {fileID: -1623642405698343859, guid: c0d8648baeb99294fb7cb7bb85ef7e44, type: 3}
-  weaponData: {fileID: 11400000, guid: 3584310e80f4da24882237b127d8e6be, type: 2}
+  Name: Quick Strikes
+  Description: 
+  icon: {fileID: 7846733846128014878, guid: 684d1bcc7adaec84b81924eee4cef476, type: 3}
+  weaponData: {fileID: 11400000, guid: 86de6c31411a4904bb2dfd2f822e58e2, type: 2}
   weaponUpgradeStats:
-    damage: 100
-    timeToAttack: 0
+    damage: 0
+    timeToAttack: -2
+    numberOfAttacks: 0
+  item: {fileID: 0}
+  itemStats:
+    armor: 0

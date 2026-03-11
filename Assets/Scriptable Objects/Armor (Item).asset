@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fde8156a0ad84464b8d80beda7124938, type: 3}
-  m_Name: Armor
+  m_Name: Armor (Item)
   m_EditorClassIdentifier: 
   Name: 'Armor '
   stats:
-    armor: 10
+    armor: 5
   upgrades:
   - {fileID: 11400000, guid: a4dd3007bea98f540b9aa71fd8fbe685, type: 2}

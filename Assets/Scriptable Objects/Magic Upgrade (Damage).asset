@@ -10,12 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d78fb601f741b0d4c823cc917b07795c, type: 3}
-  m_Name: Magic Upgrade (More Damage)
+  m_Name: Magic Upgrade (Damage)
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: More Damage
-  icon: {fileID: -3202301667719017391, guid: 0e34d19298b27424294210de781fd7f6, type: 3}
+  Name: Damage
+  Description: 
+  icon: {fileID: -1623642405698343859, guid: c0d8648baeb99294fb7cb7bb85ef7e44, type: 3}
   weaponData: {fileID: 11400000, guid: 3584310e80f4da24882237b127d8e6be, type: 2}
   weaponUpgradeStats:
-    damage: 250
+    damage: 25
     timeToAttack: 0
+    numberOfAttacks: 0
+  item: {fileID: 0}
+  itemStats:
+    armor: 0

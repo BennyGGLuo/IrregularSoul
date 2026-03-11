@@ -8,75 +8,72 @@ public class WorldScroling : MonoBehaviour
     [SerializeField] private Transform player;
 
     [Header("Tilemaps")]
-    [SerializeField] private Tilemap backgroundTilemap;   // Grass Background
-    [SerializeField] private Tilemap middlegroundTilemap; // Middleground (water/props)
+    [SerializeField] private Tilemap backgroundTilemap;
+    [SerializeField] private Tilemap middlegroundTilemap;
 
-    [Header("Background: Grass Variants")]
-    [Tooltip("Put your plain grass + grass detail variants here (Tile assets).")]
+    [Header("Background Tiles")]
+    [Tooltip("All grass tiles that can appear in the background.")]
     [SerializeField] private TileBase[] grassTiles;
 
-    [Header("Middleground: Water Tiles")]
-    [SerializeField] private bool generateWater = true;
-    [SerializeField] private TileBase[] waterTiles;
-
-    [Header("Middleground: Prop Tiles (optional)")]
-    [SerializeField] private bool generateProps = false;
-    [SerializeField] private TileBase[] propTiles; // trees, bushes, rocks, etc.
-
-    [Header("Generation Area (in CELLS)")]
-    [SerializeField] private int generateRadius = 30;
-    [SerializeField] private int clearBuffer = 12;
-
-    [Header("Performance")]
-    [SerializeField] private int tilesPerFrame = 800;
-    [SerializeField] private float refreshInterval = 0.15f;
-
-    [Header("Tuning (simple + random)")]
-    [Range(0f, 1f)][SerializeField] private float waterChance = 0.03f;
-    [Range(0f, 1f)][SerializeField] private float propChance = 0.01f;
-
-    [Tooltip("Don't generate water/props too close to player (cells).")]
-    [SerializeField] private int noFeatureRadius = 8;
-
-    // Weighted grass (simple)
-    [Header("Grass Weighting (simple)")]
-    [Tooltip("Drag your 'plain grass' tile here so it appears more often.")]
+    [Tooltip("Main plain grass tile that should appear most often.")]
     [SerializeField] private TileBase plainGrassTile;
 
     [Range(0f, 1f)]
-    [Tooltip("Chance to use plain grass instead of a random variant. Example: 0.75 = 75% plain grass.")]
+    [Tooltip("Chance to use plain grass instead of a random grass variant.")]
     [SerializeField] private float plainGrassChance = 0.75f;
 
-    private readonly HashSet<Vector3Int> placed = new HashSet<Vector3Int>();
-    private readonly HashSet<Vector3Int> queued = new HashSet<Vector3Int>();
-    private readonly Queue<Vector3Int> genQueue = new Queue<Vector3Int>();
+    [Header("Water Tiles")]
+    [SerializeField] private bool generateWater = true;
+    [SerializeField] private TileBase[] waterTiles;
+
+    [Header("Prop Tiles")]
+    [SerializeField] private bool generateProps = false;
+    [SerializeField] private TileBase[] propTiles;
+
+    [Header("Generation Area")]
+    [Tooltip("How many cells around the player should be generated.")]
+    [SerializeField] private int generateRadius = 30;
+
+    [Tooltip("Extra distance before old cells are cleared.")]
+    [SerializeField] private int clearBuffer = 12;
+
+    [Tooltip("Do not place water or props too close to the player.")]
+    [SerializeField] private int noFeatureRadius = 8;
+
+    [Header("Generation Speed")]
+    [SerializeField] private int tilesPerFrame = 800;
+    [SerializeField] private float refreshInterval = 0.15f;
+
+    [Header("Feature Chances")]
+    [Range(0f, 1f)]
+    [SerializeField] private float waterChance = 0.03f;
+
+    [Range(0f, 1f)]
+    [SerializeField] private float propChance = 0.01f;
+
+    [Header("World Seed")]
+    [Tooltip("Change this if you want a different world layout.")]
+    [SerializeField] private int worldSeed = 12345;
+
+    private readonly HashSet<Vector3Int> placedCells = new HashSet<Vector3Int>();
+    private readonly HashSet<Vector3Int> queuedCells = new HashSet<Vector3Int>();
+    private readonly Queue<Vector3Int> generationQueue = new Queue<Vector3Int>();
 
     private float timer;
     private Vector3Int lastPlayerCell;
 
-
     private void Start()
     {
-        if (player == null || backgroundTilemap == null || middlegroundTilemap == null)
+        if (!ValidateReferences())
         {
-            Debug.LogError("WorldScrolling: Missing references (player/background/middleground tilemap).");
             enabled = false;
             return;
         }
-        if (grassTiles == null || grassTiles.Length == 0)
-        {
-            Debug.LogError("WorldScrolling: Add at least 1 grass tile into grassTiles.");
-            enabled = false;
-            return;
-        }
-
-        if (waterTiles == null || waterTiles.Length == 0) generateWater = false;
-        if (propTiles == null || propTiles.Length == 0) generateProps = false;
 
         lastPlayerCell = backgroundTilemap.WorldToCell(player.position);
 
         EnqueueCellsAround(lastPlayerCell);
-        GenerateFromQueue(tilesPerFrame * 2);
+        GenerateFromQueue(tilesPerFrame * 2, lastPlayerCell);
     }
 
     private void Update()
@@ -96,7 +93,34 @@ public class WorldScroling : MonoBehaviour
             }
         }
 
-        GenerateFromQueue(tilesPerFrame);
+        GenerateFromQueue(tilesPerFrame, playerCell);
+    }
+
+    private bool ValidateReferences()
+    {
+        if (player == null || backgroundTilemap == null || middlegroundTilemap == null)
+        {
+            Debug.LogError("WorldScroling: Missing player or tilemap reference.");
+            return false;
+        }
+
+        if (grassTiles == null || grassTiles.Length == 0)
+        {
+            Debug.LogError("WorldScroling: Add at least one grass tile.");
+            return false;
+        }
+
+        if (waterTiles == null || waterTiles.Length == 0)
+        {
+            generateWater = false;
+        }
+
+        if (propTiles == null || propTiles.Length == 0)
+        {
+            generateProps = false;
+        }
+
+        return true;
     }
 
     private void EnqueueCellsAround(Vector3Int centerCell)
@@ -112,113 +136,169 @@ public class WorldScroling : MonoBehaviour
             {
                 Vector3Int cell = new Vector3Int(x, y, 0);
 
-                if (placed.Contains(cell)) continue;
-                if (queued.Contains(cell)) continue;
+                if (placedCells.Contains(cell)) continue;
+                if (queuedCells.Contains(cell)) continue;
 
-                queued.Add(cell);
-                genQueue.Enqueue(cell);
+                queuedCells.Add(cell);
+                generationQueue.Enqueue(cell);
             }
         }
     }
 
-    private void GenerateFromQueue(int budget)
+    private void GenerateFromQueue(int budget, Vector3Int playerCell)
     {
-        int count = 0;
+        int generatedCount = 0;
 
-        while (count < budget && genQueue.Count > 0)
+        while (generatedCount < budget && generationQueue.Count > 0)
         {
-            Vector3Int cell = genQueue.Dequeue();
-            queued.Remove(cell);
+            Vector3Int cell = generationQueue.Dequeue();
+            queuedCells.Remove(cell);
 
-            if (placed.Contains(cell)) continue;
-
-            bool didPlace = PlaceOneCell(cell);
-            if (didPlace)
+            if (placedCells.Contains(cell))
             {
-                placed.Add(cell);
+                generatedCount++;
+                continue;
             }
 
-            count++;
+            PlaceCell(cell, playerCell);
+            placedCells.Add(cell);
+
+            generatedCount++;
         }
     }
 
-    private bool PlaceOneCell(Vector3Int cell)
+    private void PlaceCell(Vector3Int cell, Vector3Int playerCell)
     {
-        bool placedAnything = false;
-
-        // Background (grass): only fill if empty (don't overwrite painted)
-        if (!backgroundTilemap.HasTile(cell))
-        {
-            backgroundTilemap.SetTile(cell, PickGrassTile());
-            placedAnything = true;
-        }
-
-        // Middleground features: only fill if empty (don't overwrite painted)
-        Vector3Int playerCell = backgroundTilemap.WorldToCell(player.position);
-        int dx = Mathf.Abs(cell.x - playerCell.x);
-        int dy = Mathf.Abs(cell.y - playerCell.y);
-        bool nearPlayer = (dx <= noFeatureRadius && dy <= noFeatureRadius);
-
-        if (nearPlayer) return placedAnything;
-
-        if (!middlegroundTilemap.HasTile(cell))
-        {
-            // Water first, then props (simple priority)
-            if (generateWater && Random.value < waterChance)
-            {
-                TileBase water = waterTiles[Random.Range(0, waterTiles.Length)];
-                middlegroundTilemap.SetTile(cell, water);
-                placedAnything = true;
-            }
-            else if (generateProps && Random.value < propChance)
-            {
-                TileBase prop = propTiles[Random.Range(0, propTiles.Length)];
-                middlegroundTilemap.SetTile(cell, prop);
-                placedAnything = true;
-            }
-        }
-
-        return placedAnything;
+        PlaceBackground(cell);
+        PlaceMiddleground(cell, playerCell);
     }
 
-    private TileBase PickGrassTile()
+    private void PlaceBackground(Vector3Int cell)
     {
-        // Super simple weighting:
-        // - If plainGrassTile is assigned and Random < plainGrassChance -> use it
-        // - Otherwise pick a random grass variant
-        if (plainGrassTile != null && Random.value < plainGrassChance)
-            return plainGrassTile;
+        // Do not overwrite manually painted background tiles.
+        if (backgroundTilemap.HasTile(cell)) return;
 
-        return grassTiles[Random.Range(0, grassTiles.Length)];
+        TileBase grassTile = GetGrassTile(cell);
+        backgroundTilemap.SetTile(cell, grassTile);
+    }
+
+    private void PlaceMiddleground(Vector3Int cell, Vector3Int playerCell)
+    {
+        // Do not overwrite manually painted middleground tiles.
+        if (middlegroundTilemap.HasTile(cell)) return;
+
+        if (IsNearPlayer(cell, playerCell)) return;
+
+        TileBase featureTile = GetFeatureTile(cell);
+        if (featureTile != null)
+        {
+            middlegroundTilemap.SetTile(cell, featureTile);
+        }
+    }
+
+    private TileBase GetGrassTile(Vector3Int cell)
+    {
+        // Use plain grass most of the time if assigned.
+        if (plainGrassTile != null)
+        {
+            float grassRoll = GetCellRandom01(cell.x, cell.y, 10);
+
+            if (grassRoll < plainGrassChance)
+            {
+                return plainGrassTile;
+            }
+        }
+
+        int index = GetCellRandomIndex(cell.x, cell.y, 11, grassTiles.Length);
+        return grassTiles[index];
+    }
+
+    private TileBase GetFeatureTile(Vector3Int cell)
+    {
+        float featureRoll = GetCellRandom01(cell.x, cell.y, 20);
+
+        // Water gets first priority.
+        if (generateWater && featureRoll < waterChance)
+        {
+            int waterIndex = GetCellRandomIndex(cell.x, cell.y, 21, waterTiles.Length);
+            return waterTiles[waterIndex];
+        }
+
+        // Props use a second range after water.
+        if (generateProps && featureRoll < waterChance + propChance)
+        {
+            int propIndex = GetCellRandomIndex(cell.x, cell.y, 22, propTiles.Length);
+            return propTiles[propIndex];
+        }
+
+        return null;
+    }
+
+    private bool IsNearPlayer(Vector3Int cell, Vector3Int playerCell)
+    {
+        int dx = cell.x - playerCell.x;
+        int dy = cell.y - playerCell.y;
+
+        // Circular safe zone around the player.
+        return (dx * dx + dy * dy) <= (noFeatureRadius * noFeatureRadius);
     }
 
     private void ClearFarCells(Vector3Int centerCell)
     {
         int keepRadius = generateRadius + clearBuffer;
-        List<Vector3Int> toRemove = null;
+        int keepRadiusSqr = keepRadius * keepRadius;
 
-        foreach (var cell in placed)
+        List<Vector3Int> cellsToRemove = null;
+
+        foreach (Vector3Int cell in placedCells)
         {
-            int dx = Mathf.Abs(cell.x - centerCell.x);
-            int dy = Mathf.Abs(cell.y - centerCell.y);
+            int dx = cell.x - centerCell.x;
+            int dy = cell.y - centerCell.y;
 
-            if (dx > keepRadius || dy > keepRadius)
+            if ((dx * dx + dy * dy) > keepRadiusSqr)
             {
-                toRemove ??= new List<Vector3Int>();
-                toRemove.Add(cell);
+                cellsToRemove ??= new List<Vector3Int>();
+                cellsToRemove.Add(cell);
             }
         }
 
-        if (toRemove == null) return;
+        if (cellsToRemove == null) return;
 
-        foreach (var cell in toRemove)
+        for (int i = 0; i < cellsToRemove.Count; i++)
         {
-            // Only clear what this script likely placed.
-            // If you manually painted far away, it could be cleared; easiest rule for now is:
-            // - Only paint your handcrafted area near spawn OR disable clearing while testing.
+            Vector3Int cell = cellsToRemove[i];
+
             backgroundTilemap.SetTile(cell, null);
             middlegroundTilemap.SetTile(cell, null);
-            placed.Remove(cell);
+            placedCells.Remove(cell);
         }
+    }
+
+    private float GetCellRandom01(int x, int y, int salt)
+    {
+        int hash = x;
+        hash ^= y * 374761393;
+        hash ^= salt * 668265263;
+        hash ^= worldSeed * 1442695041;
+        hash = (hash ^ (hash >> 13)) * 1274126177;
+        hash ^= hash >> 16;
+
+        uint unsignedHash = (uint)hash;
+        return unsignedHash / (float)uint.MaxValue;
+    }
+
+    private int GetCellRandomIndex(int x, int y, int salt, int length)
+    {
+        if (length <= 1) return 0;
+
+        float value = GetCellRandom01(x, y, salt);
+        int index = Mathf.FloorToInt(value * length);
+
+        if (index >= length)
+        {
+            index = length - 1;
+        }
+
+        return index;
     }
 }

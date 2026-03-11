@@ -15,18 +15,48 @@ MonoBehaviour:
   stageEvents:
   - eventType: 0
     time: 5
-    message: 100 enemies spawned
+    message: 1st wave
     enemyToSpawn: {fileID: 11400000, guid: bd47de6c17766654d8186f8ed4b42015, type: 2}
     objectToSpawn: {fileID: 0}
-    count: 100
-  - eventType: 1
-    time: 25
-    message: 
+    count: 8
+  - eventType: 0
+    time: 15
+    message: 2nd wave
+    enemyToSpawn: {fileID: 11400000, guid: bd47de6c17766654d8186f8ed4b42015, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 12
+  - eventType: 0
+    time: 30
+    message: 3rd wave
+    enemyToSpawn: {fileID: 11400000, guid: bd47de6c17766654d8186f8ed4b42015, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 18
+  - eventType: 0
+    time: 45
+    message: 4th wave
+    enemyToSpawn: {fileID: 11400000, guid: bd47de6c17766654d8186f8ed4b42015, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 24
+  - eventType: 0
+    time: 60
+    message: 5th wave
+    enemyToSpawn: {fileID: 11400000, guid: bd47de6c17766654d8186f8ed4b42015, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 30
+  - eventType: 0
+    time: 90
+    message: 6th wave
+    enemyToSpawn: {fileID: 11400000, guid: bd47de6c17766654d8186f8ed4b42015, type: 2}
+    objectToSpawn: {fileID: 0}
+    count: 40
+  - eventType: 3
+    time: 110
+    message: Boss wave
     enemyToSpawn: {fileID: 11400000, guid: 118518fec9c755e4aa02536a5eb09391, type: 2}
     objectToSpawn: {fileID: 0}
-    count: 0
+    count: 1
   - eventType: 3
-    time: 60
+    time: 150
     message: GG
     enemyToSpawn: {fileID: 0}
     objectToSpawn: {fileID: 0}

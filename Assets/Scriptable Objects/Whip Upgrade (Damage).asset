@@ -10,16 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d78fb601f741b0d4c823cc917b07795c, type: 3}
-  m_Name: Armor Upgrade 1
+  m_Name: Whip Upgrade (Damage)
   m_EditorClassIdentifier: 
-  upgradeType: 1
-  Name: Armor Upgrade
-  icon: {fileID: -5151892568812380453, guid: 8fecf68b57c77ab46b28d59617b41013, type: 3}
-  weaponData: {fileID: 0}
+  upgradeType: 0
+  Name: More Damage
+  icon: {fileID: -3202301667719017391, guid: 0e34d19298b27424294210de781fd7f6, type: 3}
+  weaponData: {fileID: 11400000, guid: 86de6c31411a4904bb2dfd2f822e58e2, type: 2}
   weaponUpgradeStats:
-    damage: 0
+    damage: 100
     timeToAttack: 0
-    numberOfAttacks: 0
-  item: {fileID: 11400000, guid: 13eb5df82ee64bc4a8197e08b20e03d6, type: 2}
-  itemStats:
-    armor: 25

@@ -10,14 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d78fb601f741b0d4c823cc917b07795c, type: 3}
-  m_Name: Armor ItemAcquireUpgrade
+  m_Name: Magic Upgrade (Number of Attack)
   m_EditorClassIdentifier: 
-  upgradeType: 3
-  Name: 
-  icon: {fileID: 8885494730473029114, guid: a2a3156fa1c7ba141b0d1b24cc9a4eca, type: 3}
-  weaponData: {fileID: 0}
+  upgradeType: 0
+  Name: Increase number of attacks
+  Description: 
+  icon: {fileID: -3202301667719017391, guid: 0e34d19298b27424294210de781fd7f6, type: 3}
+  weaponData: {fileID: 11400000, guid: 3584310e80f4da24882237b127d8e6be, type: 2}
   weaponUpgradeStats:
     damage: 0
     timeToAttack: 0
-    numberOfAttacks: 0
-  item: {fileID: 11400000, guid: 13eb5df82ee64bc4a8197e08b20e03d6, type: 2}
+    numberOfAttacks: 1
+  item: {fileID: 0}
+  itemStats:
+    armor: 0
