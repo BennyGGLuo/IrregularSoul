@@ -18,7 +18,7 @@ MonoBehaviour:
   icon: {fileID: 2097530826455664129, guid: f2375fe40c46292499b1ba02a5beb309, type: 3}
   weaponData: {fileID: 11400000, guid: 86de6c31411a4904bb2dfd2f822e58e2, type: 2}
   weaponUpgradeStats:
-    damage: 100
+    damage: 20
     timeToAttack: 0
     numberOfAttacks: 0
   item: {fileID: 0}

@@ -14831,8 +14831,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7316f330d847eac4491750e147becd2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 500
-  currentHP: 500
+  maxHP: 250
+  currentHP: 250
   armor: 0
   hpRegenerationRate: 1
   hpRegenerationTimer: 0

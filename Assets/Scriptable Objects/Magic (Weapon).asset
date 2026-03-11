@@ -10,12 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db638ee16e63fef499d346b780b548b7, type: 3}
-  m_Name: Gun
+  m_Name: Magic (Weapon)
   m_EditorClassIdentifier: 
-  Name: Gun
+  Name: Magic
   stats:
-    damage: 1
-    timeToAttack: 1
+    damage: 50
+    timeToAttack: 0.6
     numberOfAttacks: 1
-  weaponBasePrefab: {fileID: 7387077231113155837, guid: 5bfafa453c574764cb1405c202f15d76, type: 3}
-  upgrades: []
+  weaponBasePrefab: {fileID: 1236769448529206161, guid: ae1a05c258f64f04296a87336469a600, type: 3}
+  upgrades:
+  - {fileID: 11400000, guid: 41ffa15b1e9b21b4bafc6b5489b56803, type: 2}
+  - {fileID: 11400000, guid: e2b01453ef05ada48a1050d135e9849c, type: 2}
+  - {fileID: 11400000, guid: a6077651e892da049baf13a761e9a11f, type: 2}

@@ -10,15 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db638ee16e63fef499d346b780b548b7, type: 3}
-  m_Name: Whip
+  m_Name: Gun (Weapon)
   m_EditorClassIdentifier: 
-  Name: Whip
+  Name: Gun
   stats:
-    damage: 60
-    timeToAttack: 4
+    damage: 1
+    timeToAttack: 1
     numberOfAttacks: 1
-  weaponBasePrefab: {fileID: 3177545556722824901, guid: 5922bcc9263e5af429a89dbd6e14abad, type: 3}
-  upgrades:
-  - {fileID: 11400000, guid: 3c43144c1bc40f144bf697ae69cd5d4c, type: 2}
-  - {fileID: 11400000, guid: 5630d8a49e7cfd942ab585cb1c61d14b, type: 2}
-  - {fileID: 11400000, guid: 0c8a01509b0542f4eb23345dbaa6443e, type: 2}
+  weaponBasePrefab: {fileID: 7387077231113155837, guid: 5bfafa453c574764cb1405c202f15d76, type: 3}
+  upgrades: []

@@ -3,8 +3,8 @@ using UnityEngine;
 public class StageProgress : MonoBehaviour
 {
     StageTime stageTime;
-    [SerializeField] float progressTimeRate = 30f;
-    [SerializeField] float progressPerSplit = 0.2f;
+    [SerializeField] float progressTimeRate = 60f;
+    [SerializeField] float progressPerSplit = 0.12f;
 
     private void Awake()
     {

@@ -23,4 +23,4 @@ MonoBehaviour:
     numberOfAttacks: 0
   item: {fileID: 11400000, guid: 13eb5df82ee64bc4a8197e08b20e03d6, type: 2}
   itemStats:
-    armor: 5
+    armor: 3

@@ -20,7 +20,7 @@ MonoBehaviour:
   weaponUpgradeStats:
     damage: 0
     timeToAttack: 0
-    numberOfAttacks: 0
+    numberOfAttacks: 1
   item: {fileID: 0}
   itemStats:
     armor: 0
