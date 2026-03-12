@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24483b39e57a7834390e121676b25729, type: 3}
+  m_Name: EnemyData_Cat3
+  m_EditorClassIdentifier: 
+  displayName: 
+  enemyPrefab: {fileID: 2684062620391834459, guid: ac7f5681dc4df0347818f8c9d13a5f82, type: 3}
+  stats:
+    hp: 900
+    damage: 18
+    experience_reward: 250
+    movementSpeed: 1.1

@@ -64,7 +64,7 @@ MonoBehaviour:
   - eventType: 1
     time: 140
     message: 
-    enemyToSpawn: {fileID: 11400000, guid: bd47de6c17766654d8186f8ed4b42015, type: 2}
+    enemyToSpawn: {fileID: 11400000, guid: 39929399bf934bf479aae9bae7f58f8b, type: 2}
     objectToSpawn: {fileID: 0}
     count: 1
   - eventType: 2
@@ -118,7 +118,7 @@ MonoBehaviour:
   - eventType: 1
     time: 280
     message: 
-    enemyToSpawn: {fileID: 11400000, guid: bd47de6c17766654d8186f8ed4b42015, type: 2}
+    enemyToSpawn: {fileID: 11400000, guid: 39929399bf934bf479aae9bae7f58f8b, type: 2}
     objectToSpawn: {fileID: 0}
     count: 1
   - eventType: 3
