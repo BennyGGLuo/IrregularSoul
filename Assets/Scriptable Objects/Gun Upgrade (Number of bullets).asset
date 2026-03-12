@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d78fb601f741b0d4c823cc917b07795c, type: 3}
-  m_Name: Whip Upgrade (Damage)
+  m_Name: Gun Upgrade (Number of bullets)
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: Whip Damage
+  Name: Increase bullets
   Description: 
-  icon: {fileID: -5203243713839120445, guid: 12fc7302117dd1f4bb2be579b0233fed, type: 3}
-  weaponData: {fileID: 11400000, guid: 86de6c31411a4904bb2dfd2f822e58e2, type: 2}
+  icon: {fileID: 6125417721769082936, guid: 2a17a4a0dab415b4699ff2dc53d12b72, type: 3}
+  weaponData: {fileID: 11400000, guid: f79dedccc9000fc45a993ed3166ba7dc, type: 2}
   weaponUpgradeStats:
-    damage: 20
+    damage: 0
     timeToAttack: 0
-    numberOfAttacks: 0
+    numberOfAttacks: 1
   item: {fileID: 0}
   itemStats:
     armor: 0

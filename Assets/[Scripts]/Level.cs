@@ -28,7 +28,8 @@ public class Level : MonoBehaviour
         {
             //return level * 1000;
             //return 500 + (level - 1) * 250; // 2 min 
-            return 600 + (level - 1) * 200; // 10 min
+            //return 600 + (level - 1) * 200; // 10 min
+            return 500 + (level - 1) * 175; // 5 min
         }
     }
 
@@ -72,7 +73,17 @@ public class Level : MonoBehaviour
         }
 
         acquiredUpgrades.Add(upgradeData);
-        upgrades.Remove(upgradeData);
+
+        bool isUnlock =
+        upgradeData.upgradeType == UpgradeType.GetWeapon ||
+        upgradeData.upgradeType == UpgradeType.GetItem;
+
+        // Only remove unlocks so they can appear once.
+        // Keep normal upgrades in the pool so they can repeat.
+        if (isUnlock)
+        {
+            upgrades.Remove(upgradeData);
+        }
     }
 
     public void CheckLevelUp()
@@ -85,15 +96,22 @@ public class Level : MonoBehaviour
 
     private void LevelUp()
     {
-        if (selectedUpgrades == null) {selectedUpgrades = new List<UpgradeData>(); }
+        if (selectedUpgrades == null)
+        {
+            selectedUpgrades = new List<UpgradeData>();
+        }
+
         selectedUpgrades.Clear();
         selectedUpgrades.AddRange(GetUpgrades(4));
 
-        //upgradePanel.OpenPanel(GetUpgrades(4));
-        upgradePanel.OpenPanel(selectedUpgrades);
         experience -= TO_LEVEL_UP;
         level += 1;
         experienceBar.SetLevelText(level);
+
+        if (selectedUpgrades.Count > 0)
+        {
+            upgradePanel.OpenPanel(selectedUpgrades);
+        }
     }
 
     // Old method
@@ -118,12 +136,23 @@ public class Level : MonoBehaviour
     public List<UpgradeData> GetUpgrades(int count)
     {
         List<UpgradeData> upgradeList = new List<UpgradeData>();
+
+        if (upgrades == null || upgrades.Count == 0)
+        {
+            return upgradeList;
+        }
+
         bool unlockAlreadyAdded = false;
         int safety = 0;
 
         while (upgradeList.Count < count && safety < 100)
         {
             safety++;
+
+            if (upgrades.Count == 0)
+            {
+                break;
+            }
 
             UpgradeData randomUpgrade = upgrades[Random.Range(0, upgrades.Count)];
 

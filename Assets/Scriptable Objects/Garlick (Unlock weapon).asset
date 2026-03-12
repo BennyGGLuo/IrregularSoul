@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d78fb601f741b0d4c823cc917b07795c, type: 3}
-  m_Name: Magic Weapon Acquire Upgrade
+  m_Name: Garlick (Unlock weapon)
   m_EditorClassIdentifier: 
   upgradeType: 2
-  Name: Unlock magic projectile
+  Name: Unlock Garlick
   Description: 
-  icon: {fileID: 6292612254322899603, guid: 346bd163d155fdf468750e4dd759f285, type: 3}
-  weaponData: {fileID: 11400000, guid: 3584310e80f4da24882237b127d8e6be, type: 2}
+  icon: {fileID: 7662705353210048283, guid: 56891c519e89ad540bcbec732d01f874, type: 3}
+  weaponData: {fileID: 11400000, guid: 059bcdb9f78a15d43a8550ed3745d35e, type: 2}
   weaponUpgradeStats:
     damage: 0
     timeToAttack: 0

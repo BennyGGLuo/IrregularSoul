@@ -25,7 +25,7 @@ public class EnemyStats
         this.damage = (int)(damage * progress);
 
         // Scale exp 
-        float expProgress = 1f + (progress - 1f) * 1f;
+        float expProgress = 1f + (progress - 1f) * 0.5f;
         experience_reward = Mathf.RoundToInt(experience_reward * expProgress);
     }
 }

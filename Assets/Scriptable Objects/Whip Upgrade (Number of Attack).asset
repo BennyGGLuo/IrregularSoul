@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeType: 0
   Name: Increase Whip Attacks
   Description: 
-  icon: {fileID: -3202301667719017391, guid: 0e34d19298b27424294210de781fd7f6, type: 3}
+  icon: {fileID: -5203243713839120445, guid: 12fc7302117dd1f4bb2be579b0233fed, type: 3}
   weaponData: {fileID: 11400000, guid: 86de6c31411a4904bb2dfd2f822e58e2, type: 2}
   weaponUpgradeStats:
     damage: 0

@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Gun
   stats:
-    damage: 1
-    timeToAttack: 1
+    damage: 30
+    timeToAttack: 0.35
     numberOfAttacks: 1
   weaponBasePrefab: {fileID: 7387077231113155837, guid: 5bfafa453c574764cb1405c202f15d76, type: 3}
-  upgrades: []
+  upgrades:
+  - {fileID: 11400000, guid: 2255d55effebcfc4392b87061399fd4b, type: 2}
+  - {fileID: 11400000, guid: b54c005371648bb449f1e00772f0a53c, type: 2}
+  - {fileID: 11400000, guid: 7edbef3f85a43e1479252ac2923272fd, type: 2}

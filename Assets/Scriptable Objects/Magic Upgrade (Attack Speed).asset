@@ -15,7 +15,7 @@ MonoBehaviour:
   upgradeType: 0
   Name: Magic Attack Speed
   Description: 
-  icon: {fileID: 6292612254322899603, guid: 346bd163d155fdf468750e4dd759f285, type: 3}
+  icon: {fileID: -3202301667719017391, guid: 0e34d19298b27424294210de781fd7f6, type: 3}
   weaponData: {fileID: 11400000, guid: 3584310e80f4da24882237b127d8e6be, type: 2}
   weaponUpgradeStats:
     damage: 0

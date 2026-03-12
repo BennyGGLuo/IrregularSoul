@@ -14903,7 +14903,9 @@ MonoBehaviour:
   experienceBar: {fileID: 111141017}
   upgradePanel: {fileID: 1541291097}
   upgrades:
+  - {fileID: 11400000, guid: 5ad52bf40595a0f4d9e4ad532372b1e4, type: 2}
   - {fileID: 11400000, guid: ff193640d706d3943b382ca4fbc55fc1, type: 2}
+  - {fileID: 11400000, guid: acc84f4cae146044c835d71db913b1af, type: 2}
   - {fileID: 11400000, guid: 5fc6de567c3fe1949afdf1f8dd7a45bb, type: 2}
   acquiredUpgrades: []
   upgradeAvailableOnStart: []
@@ -14920,7 +14922,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponObjectContainer: {fileID: 4498064978862964419}
-  startingWeapon: {fileID: 11400000, guid: 3584310e80f4da24882237b127d8e6be, type: 2}
+  startingWeapon: {fileID: 11400000, guid: 059bcdb9f78a15d43a8550ed3745d35e, type: 2}
 --- !u!212 &9057166133380705584
 SpriteRenderer:
   m_ObjectHideFlags: 0

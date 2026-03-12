@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d78fb601f741b0d4c823cc917b07795c, type: 3}
-  m_Name: Whip Upgrade (Damage)
+  m_Name: Garlick (Attack Rate)
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: Whip Damage
+  Name: Attack Rate
   Description: 
-  icon: {fileID: -5203243713839120445, guid: 12fc7302117dd1f4bb2be579b0233fed, type: 3}
-  weaponData: {fileID: 11400000, guid: 86de6c31411a4904bb2dfd2f822e58e2, type: 2}
+  icon: {fileID: 7662705353210048283, guid: 56891c519e89ad540bcbec732d01f874, type: 3}
+  weaponData: {fileID: 11400000, guid: 059bcdb9f78a15d43a8550ed3745d35e, type: 2}
   weaponUpgradeStats:
-    damage: 20
-    timeToAttack: 0
+    damage: 0
+    timeToAttack: -0.1
     numberOfAttacks: 0
   item: {fileID: 0}
   itemStats:
