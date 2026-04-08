@@ -18,4 +18,4 @@ MonoBehaviour:
     hp: 55
     damage: 10
     experience_reward: 45
-    movementSpeed: 1.9
+    movementSpeed: 1.5
