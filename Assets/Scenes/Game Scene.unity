@@ -479,6 +479,7 @@ GameObject:
   - component: {fileID: 85010759}
   - component: {fileID: 85010758}
   - component: {fileID: 85010761}
+  - component: {fileID: 85010762}
   m_Layer: 5
   m_Name: Upgrade3
   m_TagString: Untagged
@@ -615,6 +616,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 222060448}
   upgradeNameText: {fileID: 2133365004}
+--- !u!114 &85010762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85010756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498b64ab5d20c9848ae77bad0b536c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  hoverClip: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: 4ef46d67645c212428b04efbdb0ea51f, type: 3}
 --- !u!1 &111141012
 GameObject:
   m_ObjectHideFlags: 0
@@ -878,6 +894,7 @@ GameObject:
   - component: {fileID: 142939308}
   - component: {fileID: 142939307}
   - component: {fileID: 142939310}
+  - component: {fileID: 142939311}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1011,6 +1028,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c623cd08bf8589642b2e42703f845bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &142939311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142939305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498b64ab5d20c9848ae77bad0b536c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  hoverClip: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: 4ef46d67645c212428b04efbdb0ea51f, type: 3}
 --- !u!1 &143613852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,6 +1631,7 @@ GameObject:
   - component: {fileID: 297467716}
   - component: {fileID: 297467715}
   - component: {fileID: 297467718}
+  - component: {fileID: 297467719}
   m_Layer: 5
   m_Name: Upgrade2
   m_TagString: Untagged
@@ -1735,6 +1768,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 58420931}
   upgradeNameText: {fileID: 590419960}
+--- !u!114 &297467719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297467713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498b64ab5d20c9848ae77bad0b536c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  hoverClip: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: 4ef46d67645c212428b04efbdb0ea51f, type: 3}
 --- !u!1 &307574613
 GameObject:
   m_ObjectHideFlags: 0
@@ -2051,8 +2099,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -85}
-  m_SizeDelta: {x: 379.6824, y: 163.1335}
+  m_AnchoredPosition: {x: 0, y: -122.5}
+  m_SizeDelta: {x: 783.9998, y: 245.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &353145454
 MonoBehaviour:
@@ -2074,7 +2122,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Win!
+  m_text: You win for surviving within the time!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2439,6 +2487,7 @@ GameObject:
   - component: {fileID: 453432788}
   - component: {fileID: 453432787}
   - component: {fileID: 453432786}
+  - component: {fileID: 453432790}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2572,6 +2621,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 453432784}
   m_CullTransparentMesh: 1
+--- !u!114 &453432790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453432784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498b64ab5d20c9848ae77bad0b536c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  hoverClip: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: 4ef46d67645c212428b04efbdb0ea51f, type: 3}
 --- !u!1 &513351370
 GameObject:
   m_ObjectHideFlags: 0
@@ -3515,6 +3579,7 @@ GameObject:
   - component: {fileID: 670352621}
   - component: {fileID: 670352620}
   - component: {fileID: 670352623}
+  - component: {fileID: 670352624}
   m_Layer: 5
   m_Name: Upgrade4
   m_TagString: Untagged
@@ -3651,6 +3716,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 143613854}
   upgradeNameText: {fileID: 2126522714}
+--- !u!114 &670352624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 670352618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498b64ab5d20c9848ae77bad0b536c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  hoverClip: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: 4ef46d67645c212428b04efbdb0ea51f, type: 3}
 --- !u!1001 &684533905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3995,6 +4075,7 @@ GameObject:
   - component: {fileID: 743896097}
   - component: {fileID: 743896096}
   - component: {fileID: 743896095}
+  - component: {fileID: 743896098}
   m_Layer: 5
   m_Name: Close Button
   m_TagString: Untagged
@@ -4116,6 +4197,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743896093}
   m_CullTransparentMesh: 1
+--- !u!114 &743896098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 743896093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498b64ab5d20c9848ae77bad0b536c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  hoverClip: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: 4ef46d67645c212428b04efbdb0ea51f, type: 3}
 --- !u!1 &834185395
 GameObject:
   m_ObjectHideFlags: 0
@@ -4320,6 +4416,7 @@ GameObject:
   - component: {fileID: 956211659}
   - component: {fileID: 956211658}
   - component: {fileID: 956211657}
+  - component: {fileID: 956211660}
   m_Layer: 5
   m_Name: Close Button
   m_TagString: Untagged
@@ -4441,6 +4538,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956211655}
   m_CullTransparentMesh: 1
+--- !u!114 &956211660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 956211655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498b64ab5d20c9848ae77bad0b536c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  hoverClip: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: 4ef46d67645c212428b04efbdb0ea51f, type: 3}
 --- !u!4 &995398122 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5592988196597913368, guid: b409b21eda8b92248bc6357f1d9a548d, type: 3}
@@ -5822,6 +5934,7 @@ GameObject:
   - component: {fileID: 1392676564}
   - component: {fileID: 1392676563}
   - component: {fileID: 1392676562}
+  - component: {fileID: 1392676566}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -5955,6 +6068,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1392676560}
   m_CullTransparentMesh: 1
+--- !u!114 &1392676566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392676560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498b64ab5d20c9848ae77bad0b536c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  hoverClip: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: 4ef46d67645c212428b04efbdb0ea51f, type: 3}
 --- !u!1 &1418171553
 GameObject:
   m_ObjectHideFlags: 0
@@ -12312,6 +12440,7 @@ GameObject:
   - component: {fileID: 1541291097}
   - component: {fileID: 1541291098}
   - component: {fileID: 1541291099}
+  - component: {fileID: 1541291100}
   m_Layer: 0
   m_Name: ---GAMEMANAGER---
   m_TagString: Untagged
@@ -12404,6 +12533,103 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winMessagePanel: {fileID: 1373223039}
   dataContainer: {fileID: 11400000, guid: 1146cc6a51c12dd45b96c91606fc7d01, type: 2}
+--- !u!82 &1541291100
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1541291093}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1701808616
 GameObject:
   m_ObjectHideFlags: 0
@@ -13515,6 +13741,7 @@ GameObject:
   - component: {fileID: 1878771776}
   - component: {fileID: 1878771775}
   - component: {fileID: 1878771778}
+  - component: {fileID: 1878771779}
   m_Layer: 5
   m_Name: Main Menu Button
   m_TagString: Untagged
@@ -13648,6 +13875,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c623cd08bf8589642b2e42703f845bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1878771779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878771773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498b64ab5d20c9848ae77bad0b536c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  hoverClip: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: 4ef46d67645c212428b04efbdb0ea51f, type: 3}
 --- !u!1 &1916985304
 GameObject:
   m_ObjectHideFlags: 0
@@ -13661,6 +13903,7 @@ GameObject:
   - component: {fileID: 1916985307}
   - component: {fileID: 1916985306}
   - component: {fileID: 1916985309}
+  - component: {fileID: 1916985310}
   m_Layer: 5
   m_Name: Upgrade1
   m_TagString: Untagged
@@ -13797,6 +14040,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 2123731529}
   upgradeNameText: {fileID: 635457809}
+--- !u!114 &1916985310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1916985304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498b64ab5d20c9848ae77bad0b536c35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 0}
+  hoverClip: {fileID: 0}
+  clickClip: {fileID: 8300000, guid: 4ef46d67645c212428b04efbdb0ea51f, type: 3}
 --- !u!1 &2080111589
 GameObject:
   m_ObjectHideFlags: 0
