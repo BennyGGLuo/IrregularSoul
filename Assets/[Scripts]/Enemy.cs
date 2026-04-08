@@ -41,6 +41,10 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] private float obstacleCheckDistance = 0.6f;
     [SerializeField] private float avoidanceAngle = 35f;
 
+    [Header("Attack")]
+    [SerializeField] private float attackCooldown = 0.75f;
+    private float nextAttackTime = 0f;
+
     Transform targetDestination;
     GameObject targetGameObject;
     Rigidbody2D rb;
@@ -124,13 +128,16 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void Attack()
     {
-        //Debug.Log("Attacking the character!");
+        if (Time.time < nextAttackTime)
+            return;
+
         if (targetCharacter == null)
         {
             targetCharacter = targetGameObject.GetComponent<Character>();
         }
 
         targetCharacter.TakeDamage(stats.damage);
+        nextAttackTime = Time.time + attackCooldown;
     }
 
     public void TakeDamage(int damage)

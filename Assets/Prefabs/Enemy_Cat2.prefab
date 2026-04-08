@@ -582,6 +582,7 @@ MonoBehaviour:
     m_Bits: 8
   obstacleCheckDistance: 1
   avoidanceAngle: 40
+  attackCooldown: 0.1
   stats:
     hp: 999
     damage: 1
