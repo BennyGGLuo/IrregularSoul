@@ -4152,14 +4152,13 @@ MonoBehaviour:
   backgroundTilemap: {fileID: 1428752579}
   middlegroundTilemap: {fileID: 1215586709}
   grassTiles:
-  - {fileID: 11400000, guid: 3ce444d205e079945859a72b808a284e, type: 2}
   - {fileID: 11400000, guid: 64118ae3ef1f95a47b24882e97264cac, type: 2}
   - {fileID: 11400000, guid: e7414478fa21da34abce4ef0839dcd38, type: 2}
   - {fileID: 11400000, guid: a6ff886e2ed2a85499e5abf7f018d0e8, type: 2}
   - {fileID: 11400000, guid: c9d36a6d7da321640b06c1e8abbb6da3, type: 2}
   - {fileID: 11400000, guid: d00f0852472ec08438cff4bbcd4a40bd, type: 2}
   plainGrassTile: {fileID: 11400000, guid: 3ce444d205e079945859a72b808a284e, type: 2}
-  plainGrassChance: 0.75
+  plainGrassChance: 0.466
   generateWater: 1
   waterTiles:
   - {fileID: 11400000, guid: 1bc3f6cc5e1961b458088df2bf781123, type: 2}

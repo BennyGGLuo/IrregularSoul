@@ -34,6 +34,13 @@ public class EnemyStats
 
 public class Enemy : MonoBehaviour, IDamageable
 {
+    [Header("References")]
+    [SerializeField] private LayerMask obstacleLayer;
+
+    [Header("Avoidance")]
+    [SerializeField] private float obstacleCheckDistance = 0.6f;
+    [SerializeField] private float avoidanceAngle = 35f;
+
     Transform targetDestination;
     GameObject targetGameObject;
     Rigidbody2D rb;
@@ -42,6 +49,7 @@ public class Enemy : MonoBehaviour, IDamageable
     //public EnemyStats stats;
     [SerializeField] EnemyStats stats = new EnemyStats();
     public EnemyStats Stats => stats;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -49,9 +57,62 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void FixedUpdate()
     {
-        Vector3 direction = (targetDestination.position - transform.position).normalized;
-        rb.linearVelocity = direction * stats.movementSpeed;
+        if (targetDestination == null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
+        Vector2 moveDirection = GetMoveDirection();
+        rb.linearVelocity = moveDirection * stats.movementSpeed;
     }
+
+    private Vector2 GetMoveDirection()
+    {
+        Vector2 toPlayer = (targetDestination.position - transform.position).normalized;
+
+        // If direct path is clear, move normally
+        if (!IsBlocked(toPlayer))
+        {
+            return toPlayer;
+        }
+
+        // Try left
+        Vector2 leftDir = RotateVector(toPlayer, avoidanceAngle);
+        if (!IsBlocked(leftDir))
+        {
+            return leftDir;
+        }
+
+        // Try right
+        Vector2 rightDir = RotateVector(toPlayer, -avoidanceAngle);
+        if (!IsBlocked(rightDir))
+        {
+            return rightDir;
+        }
+
+        // If all tested paths are blocked, stop or keep pushing lightly
+        return Vector2.zero;
+    }
+
+    private bool IsBlocked(Vector2 direction)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, obstacleCheckDistance, obstacleLayer);
+        return hit.collider != null;
+    }
+
+    private Vector2 RotateVector(Vector2 direction, float angle)
+    {
+        float radians = angle * Mathf.Deg2Rad;
+        float cos = Mathf.Cos(radians);
+        float sin = Mathf.Sin(radians);
+
+        return new Vector2(
+            direction.x * cos - direction.y * sin,
+            direction.x * sin + direction.y * cos
+        ).normalized;
+    }
+
 
     private void OnCollisionStay2D(Collision2D collision)
     {
